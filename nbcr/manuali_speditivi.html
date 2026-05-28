@@ -15,7 +15,6 @@
     }
     html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; -webkit-font-smoothing: antialiased; }
     .screen { max-width: 420px; min-height: 100dvh; margin: 0 auto; display: flex; flex-direction: column; }
-
     .page-header { display: flex; align-items: center; gap: 14px; padding: 16px 18px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
     .back-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg2); color: var(--red); font-size: 20px; text-decoration: none; flex-shrink: 0; -webkit-tap-highlight-color: transparent; transition: background 0.15s, border-color 0.15s; }
     .back-btn:active { background: #160800; border-color: var(--red); }
@@ -24,10 +23,8 @@
     .page-title { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #fff; line-height: 1; }
     .page-subtitle { font-size: 11px; color: var(--text-faint); letter-spacing: 0.06em; margin-top: 3px; }
     .header-badge { font-size: 9px; letter-spacing: 0.12em; color: var(--red); border: 1px solid rgba(192,57,0,0.3); border-radius: 4px; padding: 3px 7px; font-family: 'Oswald', sans-serif; }
-
     .content { flex: 1; padding: 24px 18px 40px; }
     .section-label { font-size: 10px; letter-spacing: 0.28em; color: var(--text-faint); text-transform: uppercase; font-weight: 600; margin: 0 0 14px; }
-
     .manual-btn {
       display: flex; align-items: center; gap: 14px;
       background: var(--bg2); border: 1px solid var(--border);
@@ -40,16 +37,12 @@
     }
     .manual-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--red); opacity: 0.7; }
     .manual-btn:active { border-color: var(--red); background: #160800; }
-
     .manual-icon {
-      width: 54px; height: 54px;
-      flex-shrink: 0;
+      width: 54px; height: 54px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      background: #1a1a1a; border-radius: 10px;
-      overflow: hidden;
+      background: #1a1a1a; border-radius: 10px; overflow: hidden;
     }
-    .manual-icon img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
-
+    .manual-icon svg { width: 48px; height: 48px; }
     .manual-info { flex: 1; }
     .manual-name { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0.06em; color: #fff; line-height: 1.2; }
     .manual-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; letter-spacing: 0.04em; }
@@ -72,8 +65,25 @@
   <main class="content">
     <p class="section-label">Strumenti e rilevatori</p>
 
+    <!-- DRAGER -->
     <a href="https://drive.google.com/file/d/1gKc8c00fmkyRgHM7HFwid8UG-wfZQcEN/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon"><img src="img/icon_multigas.svg" alt="Rilevatore multigas" /></div>
+      <div class="manual-icon">
+        <svg viewBox="0 0 78 210" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="30" width="68" height="90" rx="12" fill="#2255cc" stroke="#112299" stroke-width="3"/>
+          <rect x="13" y="40" width="52" height="34" rx="6" fill="#aaffcc" stroke="#33aa66" stroke-width="2"/>
+          <rect x="18" y="48" width="8" height="18" rx="2" fill="#22cc55"/>
+          <rect x="30" y="52" width="8" height="14" rx="2" fill="#ffcc00"/>
+          <rect x="42" y="44" width="8" height="22" rx="2" fill="#22cc55"/>
+          <rect x="54" y="56" width="6" height="10" rx="2" fill="#ff4444"/>
+          <circle cx="39" cy="94" r="12" fill="#ff4444" stroke="#cc0000" stroke-width="2.5"/>
+          <circle cx="39" cy="94" r="6" fill="#ff8888"/>
+          <rect x="73" y="50" width="8" height="44" rx="4" fill="#aaaacc" stroke="#8888aa" stroke-width="1.5"/>
+          <path d="M39 120 Q39 145 20 155 Q8 160 4 175 Q0 188 6 195" fill="none" stroke="#ffcc00" stroke-width="5" stroke-linecap="round"/>
+          <path d="M39 120 Q39 145 20 155 Q8 160 4 175 Q0 188 6 195" fill="none" stroke="#cc9900" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,4"/>
+          <ellipse cx="7" cy="198" rx="6" ry="9" fill="#333" stroke="#555" stroke-width="2"/>
+          <circle cx="7" cy="194" r="2.5" fill="#ff4444"/>
+        </svg>
+      </div>
       <div class="manual-info">
         <div class="manual-name">Dräger X-am 8000</div>
         <div class="manual-sub">Rilevatore multigas — Manuale speditivo</div>
@@ -81,8 +91,24 @@
       <div class="manual-arrow">›</div>
     </a>
 
+    <!-- SEWERIN -->
     <a href="https://drive.google.com/file/d/1G_fHMzynf-5mijpv4B9ht6PMJ5RE_aoy/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon"><img src="img/icon_cercafughe.svg" alt="Cercafughe" /></div>
+      <div class="manual-icon">
+        <svg viewBox="0 0 185 165" xmlns="http://www.w3.org/2000/svg">
+          <rect x="26" y="74" width="30" height="52" rx="10" fill="#226622" stroke="#114411" stroke-width="3"/>
+          <path d="M36 100 Q22 108 24 120 Q26 130 38 126" fill="none" stroke="#114411" stroke-width="3" stroke-linecap="round"/>
+          <rect x="28" y="104" width="10" height="14" rx="4" fill="#ff4444" stroke="#cc0000" stroke-width="1.5"/>
+          <rect x="10" y="34" width="80" height="46" rx="12" fill="#33aa33" stroke="#116611" stroke-width="3"/>
+          <rect x="16" y="40" width="42" height="28" rx="5" fill="#aaffaa" stroke="#33aa33" stroke-width="1.5"/>
+          <text x="37" y="52" font-size="9" font-weight="700" text-anchor="middle" fill="#115511" font-family="monospace">0.02</text>
+          <text x="37" y="63" font-size="7" text-anchor="middle" fill="#338833" font-family="monospace">ppm</text>
+          <circle cx="70" cy="52" r="7" fill="#00ff44" stroke="#009922" stroke-width="2"/>
+          <path d="M90 56 Q110 50 125 42 Q138 36 152 34 Q162 33 168 36" fill="none" stroke="#ffcc00" stroke-width="5" stroke-linecap="round"/>
+          <path d="M90 56 Q110 50 125 42 Q138 36 152 34 Q162 33 168 36" fill="none" stroke="#cc9900" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,4"/>
+          <ellipse cx="171" cy="36" rx="9" ry="5" fill="#333" stroke="#555" stroke-width="2"/>
+          <circle cx="174" cy="35" r="2.5" fill="#ff4444"/>
+        </svg>
+      </div>
       <div class="manual-info">
         <div class="manual-name">Sewerin PM4</div>
         <div class="manual-sub">Cercafughe — Manuale speditivo</div>
@@ -90,8 +116,25 @@
       <div class="manual-arrow">›</div>
     </a>
 
+    <!-- ALTAIR -->
     <a href="https://drive.google.com/file/d/1XMiud5w4vLYdecM1UOvc_s9bO41dtSKw/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon"><img src="img/icon_multigas.svg" alt="Rilevatore multigas" /></div>
+      <div class="manual-icon">
+        <svg viewBox="0 0 78 210" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="30" width="68" height="90" rx="12" fill="#2255cc" stroke="#112299" stroke-width="3"/>
+          <rect x="13" y="40" width="52" height="34" rx="6" fill="#aaffcc" stroke="#33aa66" stroke-width="2"/>
+          <rect x="18" y="48" width="8" height="18" rx="2" fill="#22cc55"/>
+          <rect x="30" y="52" width="8" height="14" rx="2" fill="#ffcc00"/>
+          <rect x="42" y="44" width="8" height="22" rx="2" fill="#22cc55"/>
+          <rect x="54" y="56" width="6" height="10" rx="2" fill="#ff4444"/>
+          <circle cx="39" cy="94" r="12" fill="#ff4444" stroke="#cc0000" stroke-width="2.5"/>
+          <circle cx="39" cy="94" r="6" fill="#ff8888"/>
+          <rect x="73" y="50" width="8" height="44" rx="4" fill="#aaaacc" stroke="#8888aa" stroke-width="1.5"/>
+          <path d="M39 120 Q39 145 20 155 Q8 160 4 175 Q0 188 6 195" fill="none" stroke="#ffcc00" stroke-width="5" stroke-linecap="round"/>
+          <path d="M39 120 Q39 145 20 155 Q8 160 4 175 Q0 188 6 195" fill="none" stroke="#cc9900" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,4"/>
+          <ellipse cx="7" cy="198" rx="6" ry="9" fill="#333" stroke="#555" stroke-width="2"/>
+          <circle cx="7" cy="194" r="2.5" fill="#ff4444"/>
+        </svg>
+      </div>
       <div class="manual-info">
         <div class="manual-name">Altair 5X</div>
         <div class="manual-sub">Rilevatore multigas — Manuale speditivo</div>
@@ -99,8 +142,24 @@
       <div class="manual-arrow">›</div>
     </a>
 
+    <!-- TESTO -->
     <a href="https://drive.google.com/file/d/13zZ454jBUIP3mlGi4JGCJWq-qo7koooC/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon"><img src="img/icon_cercafughe.svg" alt="Cercafughe" /></div>
+      <div class="manual-icon">
+        <svg viewBox="0 0 185 165" xmlns="http://www.w3.org/2000/svg">
+          <rect x="26" y="74" width="30" height="52" rx="10" fill="#226622" stroke="#114411" stroke-width="3"/>
+          <path d="M36 100 Q22 108 24 120 Q26 130 38 126" fill="none" stroke="#114411" stroke-width="3" stroke-linecap="round"/>
+          <rect x="28" y="104" width="10" height="14" rx="4" fill="#ff4444" stroke="#cc0000" stroke-width="1.5"/>
+          <rect x="10" y="34" width="80" height="46" rx="12" fill="#33aa33" stroke="#116611" stroke-width="3"/>
+          <rect x="16" y="40" width="42" height="28" rx="5" fill="#aaffaa" stroke="#33aa33" stroke-width="1.5"/>
+          <text x="37" y="52" font-size="9" font-weight="700" text-anchor="middle" fill="#115511" font-family="monospace">0.02</text>
+          <text x="37" y="63" font-size="7" text-anchor="middle" fill="#338833" font-family="monospace">ppm</text>
+          <circle cx="70" cy="52" r="7" fill="#00ff44" stroke="#009922" stroke-width="2"/>
+          <path d="M90 56 Q110 50 125 42 Q138 36 152 34 Q162 33 168 36" fill="none" stroke="#ffcc00" stroke-width="5" stroke-linecap="round"/>
+          <path d="M90 56 Q110 50 125 42 Q138 36 152 34 Q162 33 168 36" fill="none" stroke="#cc9900" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,4"/>
+          <ellipse cx="171" cy="36" rx="9" ry="5" fill="#333" stroke="#555" stroke-width="2"/>
+          <circle cx="174" cy="35" r="2.5" fill="#ff4444"/>
+        </svg>
+      </div>
       <div class="manual-info">
         <div class="manual-name">Cercafughe Testo 316</div>
         <div class="manual-sub">Cercafughe — Manuale speditivo</div>
@@ -108,8 +167,28 @@
       <div class="manual-arrow">›</div>
     </a>
 
+    <!-- FLIR -->
     <a href="https://drive.google.com/file/d/1vONDqYTA9wSaNXSlvrSp19_cdTisVFKn/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon"><img src="img/icon_termocamera.svg" alt="Termocamera" /></div>
+      <div class="manual-icon">
+        <svg viewBox="0 0 110 185" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="110" width="36" height="70" rx="12" fill="#cc4400" stroke="#882200" stroke-width="3"/>
+          <rect x="4" y="30" width="100" height="86" rx="14" fill="#dd5500" stroke="#882200" stroke-width="3"/>
+          <rect x="10" y="38" width="56" height="42" rx="6" fill="#111" stroke="#441100" stroke-width="2"/>
+          <path d="M16 78 Q14 66 20 60 Q18 68 24 64 Q20 72 26 68 Q22 76 28 74 Q24 80 16 80Z" fill="#ff6600"/>
+          <path d="M16 78 Q15 70 20 64 Q19 70 24 66 Q21 73 26 70 Q23 77 28 75 Q25 79 16 78Z" fill="#ffcc00"/>
+          <path d="M28 78 Q24 60 33 48 Q30 62 38 56 Q33 66 40 62 Q35 72 42 68 Q37 78 28 80Z" fill="#ff4400"/>
+          <path d="M29 78 Q26 63 33 52 Q31 64 38 59 Q34 68 40 64 Q36 73 42 69 Q38 78 29 78Z" fill="#ffaa00"/>
+          <path d="M42 78 Q40 66 46 60 Q44 68 50 64 Q46 72 52 68 Q48 76 54 74 Q50 80 42 80Z" fill="#ff6600"/>
+          <path d="M42 78 Q41 70 46 64 Q45 70 50 66 Q47 73 52 70 Q49 77 54 75 Q51 79 42 78Z" fill="#ffcc00"/>
+          <circle cx="83" cy="60" r="22" fill="#111" stroke="#882200" stroke-width="3"/>
+          <circle cx="83" cy="60" r="16" fill="#1a0a00" stroke="#cc4400" stroke-width="2"/>
+          <circle cx="83" cy="60" r="10" fill="#2a1000" stroke="#dd6600" stroke-width="1.5"/>
+          <circle cx="83" cy="60" r="5" fill="#ff8800" opacity="0.4"/>
+          <circle cx="80" cy="57" r="2.5" fill="#fff" opacity="0.25"/>
+          <circle cx="20" cy="100" r="7" fill="#ff4444" stroke="#cc0000" stroke-width="2"/>
+          <rect x="32" y="95" width="14" height="10" rx="4" fill="#ffcc00" stroke="#cc9900" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="manual-info">
         <div class="manual-name">Termocamera Flir K65</div>
         <div class="manual-sub">Termocamera — Manuale speditivo</div>
@@ -117,8 +196,28 @@
       <div class="manual-arrow">›</div>
     </a>
 
+    <!-- KITAGAWA -->
     <a href="https://drive.google.com/file/d/12Of_Hswj_hwgLtCkZymgzDTZlRvN2dNk/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon"><img src="img/icon_fiala.svg" alt="Fiale Kitagawa" /></div>
+      <div class="manual-icon">
+        <svg viewBox="0 0 130 145" xmlns="http://www.w3.org/2000/svg">
+          <rect x="46" y="20" width="20" height="22" rx="4" fill="#cceeff" stroke="#5599cc" stroke-width="2.5"/>
+          <rect x="42" y="12" width="28" height="12" rx="5" fill="#ff4444" stroke="#cc0000" stroke-width="2.5"/>
+          <rect x="30" y="40" width="52" height="90" rx="18" fill="#ddf4ff" stroke="#5599cc" stroke-width="2.5"/>
+          <rect x="32" y="80" width="48" height="48" rx="0" fill="#44aaff" opacity="0.5"/>
+          <rect x="32" y="108" width="48" height="20" rx="0" fill="#2288ff" opacity="0.6"/>
+          <circle cx="58" cy="90" r="6" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.7"/>
+          <circle cx="70" cy="98" r="4" fill="none" stroke="#fff" stroke-width="1.2" opacity="0.5"/>
+          <line x1="33" y1="70" x2="42" y2="70" stroke="#5599cc" stroke-width="1.5"/>
+          <line x1="33" y1="82" x2="42" y2="82" stroke="#5599cc" stroke-width="1.5"/>
+          <line x1="33" y1="94" x2="42" y2="94" stroke="#5599cc" stroke-width="1.5"/>
+          <rect x="94" y="50" width="14" height="58" rx="5" fill="#ffeedd" stroke="#cc8844" stroke-width="2"/>
+          <rect x="96" y="78" width="10" height="28" rx="0" fill="#ff8844" opacity="0.5"/>
+          <rect x="93" y="44" width="16" height="10" rx="4" fill="#ffcc44" stroke="#cc8800" stroke-width="1.5"/>
+          <rect x="110" y="60" width="12" height="48" rx="5" fill="#eeffee" stroke="#44aa44" stroke-width="2"/>
+          <rect x="112" y="84" width="8" height="22" rx="0" fill="#44ff44" opacity="0.4"/>
+          <rect x="109" y="54" width="14" height="10" rx="4" fill="#88ff44" stroke="#44aa00" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="manual-info">
         <div class="manual-name">Fiale Kitagawa</div>
         <div class="manual-sub">Fiale rilevamento — Manuale speditivo</div>
