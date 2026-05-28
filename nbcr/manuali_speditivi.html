@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Manuali Speditivi — NBCR · VVFHAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #c03900; --bg: #090909; --bg2: #111111; --bg3: #181818;
+      --border: #222222; --text: #ffffff; --text-muted: #888888; --text-faint: #444444;
+    }
+    html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; -webkit-font-smoothing: antialiased; }
+    .screen { max-width: 420px; min-height: 100dvh; margin: 0 auto; display: flex; flex-direction: column; }
+
+    .page-header { display: flex; align-items: center; gap: 14px; padding: 16px 18px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+    .back-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg2); color: var(--red); font-size: 20px; text-decoration: none; flex-shrink: 0; -webkit-tap-highlight-color: transparent; transition: background 0.15s, border-color 0.15s; }
+    .back-btn:active { background: #160800; border-color: var(--red); }
+    .header-info { flex: 1; }
+    .page-icon { font-size: 18px; line-height: 1; margin-bottom: 2px; }
+    .page-title { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #fff; line-height: 1; }
+    .page-subtitle { font-size: 11px; color: var(--text-faint); letter-spacing: 0.06em; margin-top: 3px; }
+    .header-badge { font-size: 9px; letter-spacing: 0.12em; color: var(--red); border: 1px solid rgba(192,57,0,0.3); border-radius: 4px; padding: 3px 7px; font-family: 'Oswald', sans-serif; }
+
+    .content { flex: 1; padding: 24px 18px 40px; }
+    .section-label { font-size: 10px; letter-spacing: 0.28em; color: var(--text-faint); text-transform: uppercase; font-weight: 600; margin: 0 0 14px; }
+
+    .manual-btn {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 18px;
+      text-decoration: none; color: inherit;
+      margin-bottom: 10px;
+      -webkit-tap-highlight-color: transparent;
+      transition: border-color 0.15s, background 0.15s;
+      position: relative; overflow: hidden;
+    }
+    .manual-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--red); opacity: 0.7; }
+    .manual-btn:active { border-color: var(--red); background: #160800; }
+
+    .manual-icon { font-size: 26px; flex-shrink: 0; }
+    .manual-info { flex: 1; }
+    .manual-name { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0.06em; color: #fff; line-height: 1.2; }
+    .manual-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; letter-spacing: 0.04em; }
+    .manual-arrow { font-size: 22px; color: var(--red); opacity: 0.5; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div class="screen">
+
+  <header class="page-header">
+    <a href="nbcr.html" class="back-btn" aria-label="Torna a NBCR">‹</a>
+    <div class="header-info">
+      <div class="page-icon">📋</div>
+      <div class="page-title">MANUALI SPEDITIVI</div>
+      <div class="page-subtitle">Guide operative rapide</div>
+    </div>
+    <div class="header-badge">NBCR</div>
+  </header>
+
+  <main class="content">
+    <p class="section-label">Strumenti e rilevatori</p>
+
+    <a href="https://drive.google.com/file/d/1gKc8c00fmkyRgHM7HFwid8UG-wfZQcEN/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
+      <div class="manual-icon">🔬</div>
+      <div class="manual-info">
+        <div class="manual-name">Dräger X-am 8000</div>
+        <div class="manual-sub">Rilevatore multigas — Manuale speditivo</div>
+      </div>
+      <div class="manual-arrow">›</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1G_fHMzynf-5mijpv4B9ht6PMJ5RE_aoy/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
+      <div class="manual-icon">🔬</div>
+      <div class="manual-info">
+        <div class="manual-name">Sewerin PM4</div>
+        <div class="manual-sub">Rilevatore gas — Manuale speditivo</div>
+      </div>
+      <div class="manual-arrow">›</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1XMiud5w4vLYdecM1UOvc_s9bO41dtSKw/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
+      <div class="manual-icon">🔬</div>
+      <div class="manual-info">
+        <div class="manual-name">Altair 5X</div>
+        <div class="manual-sub">Rilevatore multigas — Manuale speditivo</div>
+      </div>
+      <div class="manual-arrow">›</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/13zZ454jBUIP3mlGi4JGCJWq-qo7koooC/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
+      <div class="manual-icon">🔍</div>
+      <div class="manual-info">
+        <div class="manual-name">Cercafughe Testo 316</div>
+        <div class="manual-sub">Rilevatore fughe gas — Manuale speditivo</div>
+      </div>
+      <div class="manual-arrow">›</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1vONDqYTA9wSaNXSlvrSp19_cdTisVFKn/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
+      <div class="manual-icon">📷</div>
+      <div class="manual-info">
+        <div class="manual-name">Termocamera Flir K65</div>
+        <div class="manual-sub">Termocamera — Manuale speditivo</div>
+      </div>
+      <div class="manual-arrow">›</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/12Of_Hswj_hwgLtCkZymgzDTZlRvN2dNk/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
+      <div class="manual-icon">🧪</div>
+      <div class="manual-info">
+        <div class="manual-name">Fiale Kitagawa</div>
+        <div class="manual-sub">Fiale rilevamento — Manuale speditivo</div>
+      </div>
+      <div class="manual-arrow">›</div>
+    </a>
+
+  </main>
+</div>
+</body>
+</html>

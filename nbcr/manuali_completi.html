@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Manuali Completi — NBCR · VVFHAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #c03900; --bg: #090909; --bg2: #111111;
+      --border: #222222; --text: #ffffff; --text-muted: #888888; --text-faint: #444444;
+    }
+    html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; -webkit-font-smoothing: antialiased; }
+    .screen { max-width: 420px; min-height: 100dvh; margin: 0 auto; display: flex; flex-direction: column; }
+    .page-header { display: flex; align-items: center; gap: 14px; padding: 16px 18px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+    .back-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg2); color: var(--red); font-size: 20px; text-decoration: none; flex-shrink: 0; -webkit-tap-highlight-color: transparent; transition: background 0.15s, border-color 0.15s; }
+    .back-btn:active { background: #160800; border-color: var(--red); }
+    .header-info { flex: 1; }
+    .page-icon { font-size: 18px; line-height: 1; margin-bottom: 2px; }
+    .page-title { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #fff; line-height: 1; }
+    .page-subtitle { font-size: 11px; color: var(--text-faint); letter-spacing: 0.06em; margin-top: 3px; }
+    .header-badge { font-size: 9px; letter-spacing: 0.12em; color: var(--red); border: 1px solid rgba(192,57,0,0.3); border-radius: 4px; padding: 3px 7px; font-family: 'Oswald', sans-serif; }
+    .content { flex: 1; padding: 24px 18px 40px; display: flex; align-items: center; justify-content: center; }
+    .placeholder-card { background: var(--bg2); border: 1px dashed #2a2a2a; border-radius: 16px; padding: 40px 24px; text-align: center; width: 100%; }
+    .placeholder-icon { font-size: 40px; margin-bottom: 14px; opacity: 0.35; }
+    .placeholder-title { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 8px; }
+    .placeholder-text { font-size: 13px; color: var(--text-faint); line-height: 1.6; }
+  </style>
+</head>
+<body>
+<div class="screen">
+  <header class="page-header">
+    <a href="nbcr.html" class="back-btn" aria-label="Torna a NBCR">‹</a>
+    <div class="header-info">
+      <div class="page-icon">📚</div>
+      <div class="page-title">MANUALI COMPLETI</div>
+      <div class="page-subtitle">Documentazione tecnica completa</div>
+    </div>
+    <div class="header-badge">NBCR</div>
+  </header>
+  <main class="content">
+    <div class="placeholder-card">
+      <div class="placeholder-icon">📚</div>
+      <div class="placeholder-title">Sezione in allestimento</div>
+      <div class="placeholder-text">I manuali completi saranno disponibili a breve.</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
