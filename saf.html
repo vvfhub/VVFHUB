@@ -11,14 +11,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --red: #c03900;
-      --red-glow: #c0390020;
-      --bg: #090909;
-      --bg2: #111111;
-      --bg3: #181818;
-      --border: #222222;
-      --text: #ffffff;
-      --text-muted: #888888;
-      --text-faint: #444444;
+      --bg: #ffffff; --bg2: #f4f4f4; --bg3: #ebebeb;
+      --border: #ddd; --text: #1a1a1a; --text-muted: #555; --text-faint: #999;
     }
     html, body {
       min-height: 100dvh;
@@ -53,7 +47,7 @@
       justify-content: center;
       width: 38px; height: 38px;
       border-radius: 10px;
-      border: 1px solid var(--border);
+      border: 1px solid #e0e0e0;
       background: var(--bg2);
       color: var(--red);
       font-size: 20px;
@@ -62,7 +56,7 @@
       -webkit-tap-highlight-color: transparent;
       transition: background 0.15s, border-color 0.15s;
     }
-    .back-btn:active, .back-btn:hover { background: #160800; border-color: var(--red); }
+    .back-btn:active, .back-btn:hover { background: #ffe8e0; border-color: var(--red); }
     .header-info { flex: 1; }
     .page-icon { font-size: 20px; line-height: 1; margin-bottom: 2px; }
     .page-title {
@@ -70,11 +64,11 @@
       font-size: 26px;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: #fff;
+      color: var(--text);
       line-height: 1;
     }
     .page-subtitle {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--text-faint);
       letter-spacing: 0.06em;
       margin-top: 3px;
@@ -83,7 +77,7 @@
       font-size: 9px;
       letter-spacing: 0.12em;
       color: var(--red);
-      border: 1px solid rgba(192,57,0,0.3);
+      border: 1px solid rgba(192,57,0,0.4);
       border-radius: 4px;
       padding: 3px 7px;
       font-family: 'Oswald', sans-serif;
@@ -98,13 +92,13 @@
     /* ── placeholder ── */
     .placeholder-card {
       background: var(--bg2);
-      border: 1px dashed #2a2a2a;
+      border: 1px dashed #ccc;
       border-radius: 14px;
       padding: 32px 20px;
       text-align: center;
       margin-bottom: 16px;
     }
-    .placeholder-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.5; }
+    .placeholder-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.4; }
     .placeholder-title {
       font-family: 'Oswald', sans-serif;
       font-size: 16px;
@@ -114,7 +108,7 @@
       margin-bottom: 6px;
     }
     .placeholder-text {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-faint);
       line-height: 1.5;
     }
@@ -122,7 +116,7 @@
     /* ── card info (per quando aggiungerai contenuti) ── */
     .info-card {
       background: var(--bg2);
-      border: 1px solid var(--border);
+      border: 1px solid #e0e0e0;
       border-radius: 14px;
       padding: 16px 18px;
       margin-bottom: 12px;
@@ -142,18 +136,18 @@
       font-size: 15px;
       font-weight: 600;
       letter-spacing: 0.06em;
-      color: #fff;
+      color: var(--text);
       margin-bottom: 6px;
     }
     .card-body {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-muted);
       line-height: 1.55;
     }
 
     /* ── section label ── */
     .section-label {
-      font-size: 10px;
+      font-size: 14px;
       letter-spacing: 0.28em;
       color: var(--text-faint);
       text-transform: uppercase;
@@ -165,10 +159,10 @@
     /* ── tag ── */
     .tag {
       display: inline-block;
-      font-size: 10px;
+      font-size: 14px;
       letter-spacing: 0.1em;
       color: var(--red);
-      border: 1px solid rgba(192,57,0,0.3);
+      border: 1px solid rgba(192,57,0,0.4);
       border-radius: 4px;
       padding: 2px 7px;
       font-family: 'Oswald', sans-serif;
