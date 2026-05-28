@@ -107,6 +107,9 @@
     .print-btn { width: 100%; background: none; border: 1px solid var(--red); border-radius: 12px; padding: 12px; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: var(--red); cursor: pointer; margin-top: 12px; display: none; -webkit-tap-highlight-color: transparent; transition: background 0.15s; }
     .print-btn:active { background: #ffe8e0; }
     .print-btn.show { display: block; }
+    .share-btn { width: 100%; background: var(--red); border: none; border-radius: 12px; padding: 12px; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #fff; cursor: pointer; margin-top: 10px; display: none; -webkit-tap-highlight-color: transparent; transition: opacity 0.15s; }
+    .share-btn:active { opacity: 0.75; }
+    .share-btn.show { display: block; }
 
     /* ── PRINT ── */
     @media print {
@@ -293,6 +296,7 @@
     </div>
 
     <button class="print-btn" id="print-btn" onclick="stampaReport()">🖨 STAMPA REPORT</button>
+    <button class="share-btn" id="share-btn" onclick="condividiReport()">📤 CONDIVIDI REPORT</button>
 
   </div>
 </div>
@@ -332,7 +336,8 @@
       document.getElementById('result-label').textContent='DATI INSUFFICIENTI';
       document.getElementById('result-verdict').textContent='Prima lettura netta = 0';
       document.getElementById('result-details').textContent='Verifica i dati inseriti.';
-      pb.classList.remove('show'); return;
+      pb.classList.remove('show');
+    document.getElementById('share-btn').classList.remove('show'); return;
     }
     const p=(1-ratio)*100;
     if (ratio<=0.5) {
@@ -352,6 +357,7 @@
       document.getElementById('result-details').textContent=`L2 netta è il ${(ratio*100).toFixed(0)}% di L1 netta. Riduzione solo del ${p.toFixed(0)}%. Procedere alla misurazione con filtro nero.`;
     }
     pb.classList.add('show');
+    document.getElementById('share-btn').classList.add('show');
   }
 
   function resetCalc() {
@@ -366,6 +372,55 @@
       'Misurazione del '+now.toLocaleDateString('it-IT',{weekday:'long',year:'numeric',month:'long',day:'numeric'})+
       ' alle '+now.toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});
     window.print();
+  }
+
+  function buildReportText() {
+    const now = new Date();
+    const data = now.toLocaleDateString('it-IT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    const ora  = now.toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});
+    const fondo  = document.getElementById('fondo').value   || '—';
+    const l1     = document.getElementById('lettura1').value || '—';
+    const l2     = document.getElementById('lettura2').value || '—';
+    const netto1 = document.getElementById('rn-netto1').textContent;
+    const netto2 = document.getElementById('rn-netto2').textContent;
+    const diff   = document.getElementById('rn-diff').textContent;
+    const ratio  = document.getElementById('rn-ratio').textContent;
+    const verdict = document.getElementById('result-verdict').textContent;
+    const details = document.getElementById('result-details').textContent;
+
+    return `☢ VVFHAB — CATENA BETA
+📅 ${data} ore ${ora}
+
+📊 DATI MISURAZIONE
+• Fondo:       ${fondo} cps
+• Lettura 1:   ${l1} cps
+• Lettura 2:   ${l2} cps
+
+📈 RISULTATI
+• L1 netta:    ${netto1} cps
+• L2 netta:    ${netto2} cps
+• L1 − L2:     ${diff} cps
+• Rapporto:    ${ratio}
+
+✅ ESITO: ${verdict}
+${details}`;
+  }
+
+  function condividiReport() {
+    const testo = buildReportText();
+    if (navigator.share) {
+      navigator.share({
+        title: 'Catena Beta — Report',
+        text: testo
+      }).catch(() => {});
+    } else {
+      // Fallback: copia negli appunti
+      navigator.clipboard.writeText(testo).then(() => {
+        alert('Testo copiato negli appunti. Incollalo in WhatsApp o Telegram.');
+      }).catch(() => {
+        alert('Condivisione non supportata su questo browser. Usa il tasto Stampa.');
+      });
+    }
   }
 </script>
 </body>
