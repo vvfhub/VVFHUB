@@ -31,7 +31,7 @@
     .manual-btn {
       display: flex; align-items: center; gap: 14px;
       background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 14px; padding: 16px 18px;
+      border-radius: 14px; padding: 14px 16px;
       text-decoration: none; color: inherit;
       margin-bottom: 10px;
       -webkit-tap-highlight-color: transparent;
@@ -41,7 +41,15 @@
     .manual-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--red); opacity: 0.7; }
     .manual-btn:active { border-color: var(--red); background: #160800; }
 
-    .manual-icon { font-size: 26px; flex-shrink: 0; }
+    .manual-icon {
+      width: 54px; height: 54px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #1a1a1a; border-radius: 10px;
+      overflow: hidden;
+    }
+    .manual-icon img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+
     .manual-info { flex: 1; }
     .manual-name { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0.06em; color: #fff; line-height: 1.2; }
     .manual-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; letter-spacing: 0.04em; }
@@ -65,7 +73,7 @@
     <p class="section-label">Strumenti e rilevatori</p>
 
     <a href="https://drive.google.com/file/d/1gKc8c00fmkyRgHM7HFwid8UG-wfZQcEN/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon">🔬</div>
+      <div class="manual-icon"><img src="img/icon_multigas.svg" alt="Rilevatore multigas" /></div>
       <div class="manual-info">
         <div class="manual-name">Dräger X-am 8000</div>
         <div class="manual-sub">Rilevatore multigas — Manuale speditivo</div>
@@ -74,16 +82,16 @@
     </a>
 
     <a href="https://drive.google.com/file/d/1G_fHMzynf-5mijpv4B9ht6PMJ5RE_aoy/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon">🔬</div>
+      <div class="manual-icon"><img src="img/icon_cercafughe.svg" alt="Cercafughe" /></div>
       <div class="manual-info">
         <div class="manual-name">Sewerin PM4</div>
-        <div class="manual-sub">Rilevatore gas — Manuale speditivo</div>
+        <div class="manual-sub">Cercafughe — Manuale speditivo</div>
       </div>
       <div class="manual-arrow">›</div>
     </a>
 
     <a href="https://drive.google.com/file/d/1XMiud5w4vLYdecM1UOvc_s9bO41dtSKw/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon">🔬</div>
+      <div class="manual-icon"><img src="img/icon_multigas.svg" alt="Rilevatore multigas" /></div>
       <div class="manual-info">
         <div class="manual-name">Altair 5X</div>
         <div class="manual-sub">Rilevatore multigas — Manuale speditivo</div>
@@ -92,16 +100,16 @@
     </a>
 
     <a href="https://drive.google.com/file/d/13zZ454jBUIP3mlGi4JGCJWq-qo7koooC/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon">🔍</div>
+      <div class="manual-icon"><img src="img/icon_cercafughe.svg" alt="Cercafughe" /></div>
       <div class="manual-info">
         <div class="manual-name">Cercafughe Testo 316</div>
-        <div class="manual-sub">Rilevatore fughe gas — Manuale speditivo</div>
+        <div class="manual-sub">Cercafughe — Manuale speditivo</div>
       </div>
       <div class="manual-arrow">›</div>
     </a>
 
     <a href="https://drive.google.com/file/d/1vONDqYTA9wSaNXSlvrSp19_cdTisVFKn/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon">📷</div>
+      <div class="manual-icon"><img src="img/icon_termocamera.svg" alt="Termocamera" /></div>
       <div class="manual-info">
         <div class="manual-name">Termocamera Flir K65</div>
         <div class="manual-sub">Termocamera — Manuale speditivo</div>
@@ -110,7 +118,7 @@
     </a>
 
     <a href="https://drive.google.com/file/d/12Of_Hswj_hwgLtCkZymgzDTZlRvN2dNk/view?usp=sharing" target="_blank" rel="noopener" class="manual-btn">
-      <div class="manual-icon">🧪</div>
+      <div class="manual-icon"><img src="img/icon_fiala.svg" alt="Fiale Kitagawa" /></div>
       <div class="manual-info">
         <div class="manual-name">Fiale Kitagawa</div>
         <div class="manual-sub">Fiale rilevamento — Manuale speditivo</div>
