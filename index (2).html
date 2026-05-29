@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>VVFHAB — Portale Operativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #c03900;
+      --red-dim: #8a2800;
+      --red-glow: #c0390025;
+      --bg: #ffffff; --bg2: #f4f4f4; --bg3: #ebebeb;
+      --border: #ddd; --text: #1a1a1a; --text-muted: #555; --text-faint: #999;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── layout centrato su mobile ── */
+    .screen {
+      max-width: 420px;
+      min-height: 100dvh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* ── status bar ── */
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 22px 6px;
+      font-size: 13px;
+      color: var(--text-faint);
+      letter-spacing: 0.06em;
+    }
+
+    .status-icons { display: flex; gap: 8px; align-items: center; }
+
+    .status-icon {
+      width: 14px; height: 14px;
+      fill: none;
+      stroke: var(--text-faint);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── hero ── */
+    .hero {
+      padding: 24px 0 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 200px; height: 80px;
+      background: radial-gradient(ellipse, rgba(192,57,0,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .emblem {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      border: 1.5px solid var(--red);
+      background: radial-gradient(circle at 40% 30%, #fff0ec, #fff8f5);
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px #f0c8b8, 0 0 28px var(--red-glow);
+    }
+
+    .emblem svg { width: 54px; height: 54px; }
+
+    .title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 46px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--text);
+      line-height: 1;
+      text-shadow: none;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ── divisore ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 28px;
+      margin: 10px 0 22px;
+    }
+    .divider-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, var(--red), transparent);
+    }
+    .divider-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--red); }
+
+    /* ── etichetta sezione ── */
+    .section-label {
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    /* ── griglia tasti ── */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .nav-btn {
+      background: var(--bg2);
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 20px 14px 16px;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .nav-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--red);
+      border-radius: 16px 0 0 16px;
+      opacity: 0.75;
+    }
+
+    .nav-btn:active, .nav-btn:hover {
+      border-color: var(--red);
+      background: #ffe8e0;
+    }
+
+    .btn-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    .btn-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .btn-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .btn-arrow {
+      position: absolute;
+      bottom: 14px; right: 14px;
+      font-size: 14px;
+      color: var(--red);
+      opacity: 0.55;
+    }
+
+    /* ── footer ── */
+    .bottom-bar {
+      border-top: 1px solid var(--border);
+      padding: 14px 22px 24px;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-info {
+      font-size: 14px;
+      color: var(--text-faint);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .badge-row { display: flex; align-items: center; gap: 10px; }
+
+    .badge {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: var(--red);
+      border: 1px solid rgba(192,57,0,0.35);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-weight: 600;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .pulse {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.3; transform:scale(0.65); }
+    }
+
+    /* ── animazione ingresso ── */
+    .fade-in { animation: fadeUp 0.4s ease both; }
+    .fade-in:nth-child(1) { animation-delay: 0.05s; }
+    .fade-in:nth-child(2) { animation-delay: 0.12s; }
+    .fade-in:nth-child(3) { animation-delay: 0.19s; }
+    .fade-in:nth-child(4) { animation-delay: 0.26s; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(12px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<script>
+  // Redirect to disclaimer if not yet accepted in this session
+  if (!sessionStorage.getItem('vvfhab_disclaimer')) {
+    window.location.replace('disclaimer.html');
+  }
+</script>
+<div class="screen">
+
+  <div class="status-bar">
+    <span id="js-time">--:--</span>
+    <div class="status-icons">
+      <svg class="status-icon" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+      <svg class="status-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="11" rx="2"/><path d="M22 11v3"/></svg>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="emblem">
+      <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M27 7C27 7 19 15 19 23C19 27.6 22 30.8 22 30.8C22 30.8 21 28 23 26C23 26 22 31 27 34C27 34 25 31 27 28C27 28 28 32 32 32C32 32 36 29 36 23C36 16 27 7 27 7Z" fill="#c03900"/>
+        <path d="M21 35C21 35 17 37 17 41C17 44.5 20 47 27 47C34 47 37 44.5 37 41C37 37 33 35 33 35C33 35 35 37.2 35 40C35 40 32 38 27 38C22 38 19 40 19 40C19 37.2 21 35 21 35Z" fill="#c03900" opacity="0.65"/>
+        <circle cx="27" cy="27" r="20" stroke="#c03900" stroke-width="1" opacity="0.25"/>
+      </svg>
+    </div>
+    <div class="title">VVFHAB</div>
+    <div class="subtitle">Portale Operativo</div>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="section-label">Sezioni operative</div>
+
+  <nav class="nav-grid" aria-label="Sezioni principali">
+
+    <a href="nbcr/nbcr.html" class="nav-btn fade-in" aria-label="Vai alla sezione NBCR">
+      <div class="btn-icon">☢</div>
+      <div class="btn-label">NBCR</div>
+      <div class="btn-desc">Nucleare, Biologico, Chimico, Radiologico</div>
+      <div class="btn-arrow">›</div>
+    </a>
+
+    <a href="saf/saf.html" class="nav-btn fade-in" aria-label="Vai alla sezione SAF">
+      <div class="btn-icon">⛰</div>
+      <div class="btn-label">SAF</div>
+      <div class="btn-desc">Speleo Alpino Fluviale</div>
+      <div class="btn-arrow">›</div>
+    </a>
+
+    <a href="tas/tas.html" class="nav-btn fade-in" aria-label="Vai alla sezione TAS">
+      <div class="btn-icon">🧭</div>
+      <div class="btn-label">TAS</div>
+      <div class="btn-desc">Topografia Applicata al Soccorso</div>
+      <div class="btn-arrow">›</div>
+    </a>
+
+    <a href="tpss/tpss.html" class="nav-btn fade-in" aria-label="Vai alla sezione TPSS">
+      <div class="btn-icon">🩺</div>
+      <div class="btn-label">TPSS</div>
+      <div class="btn-desc">Tecniche di Primo Soccorso</div>
+      <div class="btn-arrow">›</div>
+    </a>
+
+  </nav>
+
+  <div class="bottom-bar">
+    <div class="bottom-info">Corpo Nazionale VVF</div>
+    <div class="badge-row">
+      <div class="badge">HAB</div>
+      <div class="pulse"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function updateTime() {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    document.getElementById('js-time').textContent = h + ':' + m;
+  }
+  updateTime();
+  setInterval(updateTime, 10000);
+</script>
+</body>
+</html>
