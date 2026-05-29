@@ -186,6 +186,12 @@
     <div class="site-name">VVFHAB</div>
     <div class="site-sub">Portale Operativo</div>
   </div>
+  <!-- Shortcut to bottom -->
+  <div style="text-align:center; padding: 10px 20px 0;">
+    <button onclick="document.getElementById('accept-row').scrollIntoView({behavior:'smooth'});setTimeout(()=>document.getElementById('accept-row').click(),500);" style="background:none;border:1px solid var(--red);border-radius:10px;padding:8px 20px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;color:var(--red);cursor:pointer;-webkit-tap-highlight-color:transparent;">
+      ↓ VAI ALL'ACCETTAZIONE
+    </button>
+  </div>
 
   <div class="content">
 
@@ -216,6 +222,36 @@
       <div class="clause-text">Questo portale è destinato al <strong>personale del Corpo Nazionale dei Vigili del Fuoco</strong>. L'accesso da parte di soggetti non autorizzati è vietato. L'autore non risponde di utilizzi impropri da parte di terzi non autorizzati.</div>
     </div>
 
+    <!-- Privacy -->
+    <div style="margin-top:18px;">
+      <div class="disclaimer-title" style="font-size:18px;">🔒 Informativa Privacy</div>
+
+      <div class="clause">
+        <div class="clause-title">Dati raccolti</div>
+        <div class="clause-text">Questo portale <strong>non raccoglie, non tratta e non conserva dati personali</strong> degli utenti. Non sono presenti form di registrazione, sistemi di login o strumenti di tracciamento degli accessi.</div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-title">Hosting — GitHub Pages</div>
+        <div class="clause-text">Il sito è ospitato su <strong>GitHub Pages</strong> (GitHub Inc., USA). GitHub può raccogliere dati tecnici di accesso (es. indirizzi IP) secondo la propria <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color:var(--red);">Privacy Policy</a>. Il titolare del portale non ha accesso né controllo su tali dati.</div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-title">Link esterni — Google Drive</div>
+        <div class="clause-text">Alcuni contenuti sono accessibili tramite link a <strong>Google Drive</strong> (Google LLC, USA). L'accesso a tali link è soggetto alla <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--red);">Privacy Policy di Google</a>. Il titolare del portale non è responsabile del trattamento dati effettuato da Google.</div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-title">Cookie e sessione</div>
+        <div class="clause-text">Il portale utilizza esclusivamente la <strong>memoria di sessione del browser</strong> (sessionStorage) per ricordare l'accettazione del presente disclaimer durante la navigazione. Nessun dato viene trasmesso a server esterni. La sessione termina alla chiusura del browser.</div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-title">Titolare del portale</div>
+        <div class="clause-text">Il presente portale è realizzato e gestito da personale del <strong>Corpo Nazionale dei Vigili del Fuoco</strong> a scopo esclusivamente operativo interno. Per informazioni contattare direttamente l'autore tramite i canali istituzionali.</div>
+      </div>
+    </div>
+
     <!-- Checkbox accettazione -->
     <div class="accept-row" id="accept-row" onclick="toggleAccept()">
       <div class="checkbox" id="checkbox">
@@ -224,7 +260,7 @@
         </svg>
       </div>
       <div class="accept-label">
-        Ho letto e <span>accetto integralmente</span> le condizioni d'uso del portale VVFHAB e comprendo la natura consultiva delle informazioni contenute.
+        Ho letto e <span>accetto integralmente</span> l'avviso legale e l'informativa privacy del portale VVFHAB. Comprendo la natura consultiva delle informazioni contenute.
       </div>
     </div>
 
