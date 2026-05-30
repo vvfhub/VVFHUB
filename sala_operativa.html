@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Sala Operativa — VVFHAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #c03900; --bg: #ffffff; --bg2: #f4f4f4; --bg3: #ebebeb; --border: #ddd; --text: #1a1a1a; --text-muted: #555; --text-faint: #999; }
+    html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; -webkit-font-smoothing: antialiased; }
+    .screen { max-width: 420px; min-height: 100dvh; margin: 0 auto; display: flex; flex-direction: column; }
+    .page-header { display: flex; align-items: center; gap: 14px; padding: 16px 18px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+    .back-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg2); color: var(--red); font-size: 20px; text-decoration: none; flex-shrink: 0; -webkit-tap-highlight-color: transparent; transition: background 0.15s, border-color 0.15s; }
+    .back-btn:active { background: #ffe8e0; border-color: var(--red); }
+    .header-info { flex: 1; }
+    .page-icon { font-size: 18px; line-height: 1; margin-bottom: 2px; }
+    .page-title { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: 0.08em; color: var(--red); line-height: 1; }
+    .page-subtitle { font-size: 13px; color: var(--text-faint); letter-spacing: 0.06em; margin-top: 3px; }
+    .header-badge { font-size: 11px; letter-spacing: 0.1em; color: var(--red); border: 1px solid rgba(192,57,0,0.4); border-radius: 4px; padding: 3px 7px; font-family: 'Oswald', sans-serif; }
+    .content { flex: 1; padding: 24px 18px 40px; display: flex; align-items: center; justify-content: center; }
+    .placeholder-card { background: var(--bg2); border: 1px dashed #ccc; border-radius: 16px; padding: 40px 24px; text-align: center; width: 100%; }
+    .placeholder-icon { font-size: 40px; margin-bottom: 14px; opacity: 0.4; }
+    .placeholder-title { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.1em; color: var(--red); margin-bottom: 8px; }
+    .placeholder-text { font-size: 15px; color: var(--text-faint); line-height: 1.6; }
+  </style>
+</head>
+<body>
+<div class="screen">
+  <header class="page-header">
+    <a href="../index.html" class="back-btn" aria-label="Torna alla home">‹</a>
+    <div class="header-info">
+      <div class="page-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="2" y="6" width="16" height="11" rx="2" fill="#c03900" opacity="0.15" stroke="#c03900" stroke-width="1.2"/>
+          <rect x="5" y="9" width="4" height="5" rx="1" fill="#c03900" opacity="0.5"/>
+          <rect x="11" y="9" width="4" height="3" rx="1" fill="#c03900" opacity="0.4"/>
+          <path d="M8 4 Q10 2 12 4" stroke="#c03900" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <circle cx="10" cy="4" r="1" fill="#c03900"/>
+        </svg>
+      </div>
+      <div class="page-title">SALA OPERATIVA</div>
+      <div class="page-subtitle">Procedure e riferimenti operativi</div>
+    </div>
+    <div class="header-badge">VVFHAB</div>
+  </header>
+  <main class="content">
+    <div class="placeholder-card">
+      <div class="placeholder-icon">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <rect x="6" y="20" width="48" height="34" rx="5" fill="#f4f4f4" stroke="#c03900" stroke-width="2"/>
+          <rect x="14" y="28" width="12" height="16" rx="3" fill="#c03900" opacity="0.3" stroke="#c03900" stroke-width="1.5"/>
+          <rect x="32" y="28" width="12" height="10" rx="2" fill="#c03900" opacity="0.2" stroke="#c03900" stroke-width="1.2"/>
+          <rect x="32" y="41" width="5" height="5" rx="1" fill="#c03900" opacity="0.3"/>
+          <rect x="39" y="41" width="5" height="5" rx="1" fill="#c03900" opacity="0.3"/>
+          <path d="M22 16 Q30 8 38 16" stroke="#c03900" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="30" cy="16" r="3" fill="#c03900" opacity="0.6"/>
+          <path d="M16 14 Q30 4 44 14" stroke="#c03900" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="placeholder-title">Sezione in allestimento</div>
+      <div class="placeholder-text">I contenuti della Sala Operativa saranno disponibili a breve.</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
