@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>CFBT — VVFHAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #c03900; --bg: #ffffff; --bg2: #f4f4f4; --bg3: #ebebeb; --border: #ddd; --text: #1a1a1a; --text-muted: #555; --text-faint: #999; }
+    html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; -webkit-font-smoothing: antialiased; }
+    .screen { max-width: 420px; min-height: 100dvh; margin: 0 auto; display: flex; flex-direction: column; }
+    .page-header { display: flex; align-items: center; gap: 14px; padding: 16px 18px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+    .back-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg2); color: var(--red); font-size: 20px; text-decoration: none; flex-shrink: 0; -webkit-tap-highlight-color: transparent; transition: background 0.15s, border-color 0.15s; }
+    .back-btn:active { background: #ffe8e0; border-color: var(--red); }
+    .header-info { flex: 1; }
+    .page-icon { font-size: 18px; line-height: 1; margin-bottom: 2px; }
+    .page-title { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: 0.08em; color: var(--red); line-height: 1; }
+    .page-subtitle { font-size: 13px; color: var(--text-faint); letter-spacing: 0.06em; margin-top: 3px; }
+    .header-badge { font-size: 11px; letter-spacing: 0.1em; color: var(--red); border: 1px solid rgba(192,57,0,0.4); border-radius: 4px; padding: 3px 7px; font-family: 'Oswald', sans-serif; }
+    .content { flex: 1; padding: 24px 18px 40px; display: flex; align-items: center; justify-content: center; }
+    .placeholder-card { background: var(--bg2); border: 1px dashed #ccc; border-radius: 16px; padding: 40px 24px; text-align: center; width: 100%; }
+    .placeholder-icon { font-size: 40px; margin-bottom: 14px; opacity: 0.4; }
+    .placeholder-title { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.1em; color: var(--red); margin-bottom: 8px; }
+    .placeholder-text { font-size: 15px; color: var(--text-faint); line-height: 1.6; }
+  </style>
+</head>
+<body>
+<div class="screen">
+  <header class="page-header">
+    <a href="../index.html" class="back-btn" aria-label="Torna alla home">‹</a>
+    <div class="header-info">
+      <div class="page-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 17 L3 10 L10 4 L17 10 L17 17 Z" fill="#c03900" opacity="0.15" stroke="#c03900" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M7 17 L7 12 L10 12 L13 12 L13 17" stroke="#c03900" stroke-width="1.2" fill="none"/>
+          <path d="M6 8 Q10 5 14 8" stroke="#ff6600" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M8 6 Q10 4 12 6" stroke="#ff6600" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="page-title">CFBT</div>
+      <div class="page-subtitle">Compartment Fire Behaviour Training</div>
+    </div>
+    <div class="header-badge">VVFHAB</div>
+  </header>
+  <main class="content">
+    <div class="placeholder-card">
+      <div class="placeholder-icon">
+        <svg width="64" height="60" viewBox="0 0 64 60" fill="none">
+          <!-- casa -->
+          <path d="M4 28 L32 6 L60 28 L60 56 L4 56 Z" fill="#f4f4f4" stroke="#c03900" stroke-width="2" stroke-linejoin="round"/>
+          <!-- tetto con fiamme -->
+          <path d="M18 28 Q16 20 22 16 Q19 22 25 19 Q21 25 27 22 Q23 28 18 28Z" fill="#ff6600" opacity="0.85"/>
+          <path d="M18 28 Q17 22 22 18 Q20 23 25 21 Q22 26 27 23 Q24 28 18 28Z" fill="#ffcc00" opacity="0.7"/>
+          <path d="M28 24 Q25 12 33 4 Q29 16 36 11 Q31 19 38 15 Q33 23 40 19 Q35 26 28 24Z" fill="#ff4400" opacity="0.9"/>
+          <path d="M29 24 Q27 14 33 6 Q30 17 36 13 Q32 20 38 17 Q34 24 40 20 Q36 26 29 24Z" fill="#ffaa00" opacity="0.75"/>
+          <path d="M40 26 Q38 18 44 14 Q41 20 46 17 Q43 23 48 20 Q44 27 40 26Z" fill="#ff6600" opacity="0.8"/>
+          <path d="M40 26 Q39 20 44 16 Q42 21 46 19 Q44 24 48 21 Q45 27 40 26Z" fill="#ffcc00" opacity="0.6"/>
+          <!-- finestre -->
+          <rect x="10" y="36" width="14" height="12" rx="2" fill="#f0c080" opacity="0.7" stroke="#c03900" stroke-width="1"/>
+          <rect x="40" y="36" width="14" height="12" rx="2" fill="#f0c080" opacity="0.7" stroke="#c03900" stroke-width="1"/>
+          <!-- porta -->
+          <rect x="25" y="40" width="14" height="16" rx="2" fill="#c08040" opacity="0.6" stroke="#c03900" stroke-width="1"/>
+          <!-- fumo -->
+          <path d="M20 28 Q18 22 22 18" stroke="#888" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.3"/>
+          <path d="M32 20 Q30 12 34 6" stroke="#888" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="placeholder-title">Sezione in allestimento</div>
+      <div class="placeholder-text">I contenuti CFBT saranno disponibili a breve.</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
